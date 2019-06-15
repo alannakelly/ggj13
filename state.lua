@@ -14,4 +14,3 @@ end
 function State:exit()
   print("Exit state: " .. self.name)
 end
-

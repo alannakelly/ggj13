@@ -1,9 +1,10 @@
 require 'title'
+require 'fsm'
 
 local currentGameState = nil
 local keyboard = love.keyboard
 local graphics = love.graphics
-
+local lastkeyreleased = nil
 
 function love.load()
   currentGameState = Title()
@@ -31,6 +32,7 @@ function love.keyreleased( key, scancode )
   if key == "escape" then
     love.event.quit()
   end
-end
 
+  lastkeyreleased = key
+end
 
