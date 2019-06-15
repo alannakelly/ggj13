@@ -4,7 +4,7 @@ local currentGameState = nil
 local keyboard = love.keyboard
 local graphics = love.graphics
 
-  
+
 function love.load()
   currentGameState = Title()
   keyboard.setKeyRepeat(false)
@@ -20,7 +20,7 @@ function love.draw()
   if currentGameState then
     currentGameState:draw()
   else
-    graphics.clear(1,0,1,1) 
+    graphics.clear(255,0,255,255)
   end
 end
 
