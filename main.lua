@@ -1,12 +1,27 @@
+require 'title'
+
+local currentGameState = nil
+local keyboard = love.keyboard
+local graphics = love.graphics
+
+
 function love.load()
-  love.keyboard.setKeyRepeat(false)
+  currentGameState = Title()
+  keyboard.setKeyRepeat(false)
 end
 
 function love.update(dt)
+  if currentGameState then
+    currentGameState:update(dt)
+  end
 end
 
 function love.draw()
-  love.graphics.rectangle("fill", 20, 50, 60, 120)
+  if currentGameState then
+    currentGameState:draw()
+  else
+    graphics.clear(255,0,255,255)
+  end
 end
 
 function love.keypressed( key, scancode, isrepeat )
