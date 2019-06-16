@@ -1,5 +1,5 @@
-require 'title'
 require 'fsm'
+require 'title'
 
 local currentGameState = nil
 local keyboard = love.keyboard
@@ -33,6 +33,7 @@ function love.keyreleased( key, scancode )
     love.event.quit()
   end
 
-  lastkeyreleased = key
+  currentGameState.keyreleased = {key, scancode}
+
 end
 

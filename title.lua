@@ -9,8 +9,8 @@ Title = class(GameScreen,
 
 function Title:update(dt)
 
-  key = getKetReleased()
-  if key == "space" then
-    fsm.changeState(Title())
+  if keyreleased then
+    currentGameState:newGameState(GameScreen())
   end
 end
+
