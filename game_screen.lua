@@ -12,7 +12,6 @@ end
 
 function GameScreen:enter()
   State:enter()
-end
 
 function GameScreen:update()
   State:update()

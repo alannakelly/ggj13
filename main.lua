@@ -4,6 +4,7 @@ require 'state_machine'
 local keyboard = love.keyboard
 local window = love.window
 
+<<<<<<< HEAD
 Game = class(StateMachine)
 
 function Game:init()
