@@ -32,8 +32,5 @@ function love.keyreleased( key, scancode )
   if key == "escape" then
     love.event.quit()
   end
-
-  currentGameState.keyreleased = {key, scancode}
-
 end
 

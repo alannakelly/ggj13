@@ -1,6 +1,6 @@
-require "class"
+require "state"
 
-Pane = class(function(p, name, x, y, w, h, bgcol, text, textcol)
+Pane = class(State, function(p, name, x, y, w, h, bgcol, text, textcol)
   p.name = name or "Unnamed Pane"
   p.x = x or 20
   p.y = y or 20
