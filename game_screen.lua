@@ -1,16 +1,25 @@
 require 'state'
 
-local graphics = love.graphics
-
-GameScreen = class(State, function(gs, name)
-      State.init(gs,name or "Unknown Screen")
+GameScreen = class(State, function(gs, owner, name)
+      State.init(gs,owner,name or "Unknown Screen")
     end)
 
-function GameScreen:draw()
-  graphics.clear(0,0,1,1)
-  graphics.setColor(1, 1, 1, 1)
-  graphics.print(self.name,10,10)
+function GameScreen:draw(g)
+  g.clear(0,0,1,1)
+  g.setColor(1, 1, 1, 1)
+  g.print(self.name,10,10)
 end
 
-function GameScreen:update(dt)
+function GameScreen:enter()
+  State:enter()
 end
+
+function GameScreen:update()
+  State:update()
+end
+
+function GameScreen:exit()
+  State:exit()
+end
+
+
